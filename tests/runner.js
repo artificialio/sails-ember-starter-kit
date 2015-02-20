@@ -3,16 +3,20 @@
 var glob = require('glob');
 var Mocha = require('mocha');
 
+require("babel/register")({
+  experimental: true
+});
 
-require('traceur').require.makeDefault(function(filename) {
-// don't transpile our dependencies, just our app
-//The first check is if you develop locally, the second for the globally installed moduel
-  return (filename.indexOf('node_modules') === -1) ||
-    (filename.indexOf('/node_modules/sane-cli/') > -1 && filename.indexOf('/node_modules/sane-cli/node_modules') === -1);
-}, {asyncFunctions: true});
+var timeout = 18000;
+
+if (process.platform === 'win32') {
+  //apparently windows is taking its time...
+  //Well yeah look into performance improvements.
+  timeout = 90000;
+}
 
 var mocha = new Mocha({
-  timeout: 18000,
+  timeout: timeout,
   reporter: 'spec'
 });
 
