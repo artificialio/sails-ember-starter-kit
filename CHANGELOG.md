@@ -5,6 +5,7 @@
 * [ENHANCEMENT] Added [eslint](http://eslint.org/) through [mocha-eslint](https://github.com/BadgeLabs/mocha-eslint)
 * [BUGFIX] Fixed docker root issue for linux
 * [ENHANCEMENT] Added stack trace to errors in `sane new`
+* [ENHANCEMENT] Default to using local (SANE installed) ember-cli when possible.
 
 ### 0.0.24
 * [FEATURE] Added autoreload of sails server using [sails-hook-autoreload](https://github.com/sgress454/sails-hook-autoreload) hook

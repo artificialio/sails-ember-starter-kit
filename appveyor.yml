@@ -27,6 +27,7 @@ install:
   - md C:\nc
   - npm config set cache C:\nc
   - npm install -g sails
+  - npm install -g ember-cli
   - npm install
 
 # Post-install test scripts.
