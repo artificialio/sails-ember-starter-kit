@@ -3,7 +3,6 @@
 
 var glob  = require('glob');
 var Mocha = require('mocha');
-var chalk = require('chalk');
 var root;
 
 require('traceur').require.makeDefault(function (filename) {
@@ -25,6 +24,8 @@ if (!arg) {
   var root = 'tests/{unit,acceptance}';
 } else if (arg === 'unit') {
   var root = 'tests/unit';
+} else if (arg === 'acceptance') {
+  var root = 'tests/acceptance';
 } else {
   root = 'tests/{unit,acceptance}';
 }
@@ -37,13 +38,6 @@ addFiles(mocha, '/**/*Test.js');
 
 mocha.run(function (failures) {
   process.on('exit', function () {
-    if (failures === 1) {
-      console.log(chalk.red('1 Failing Test'));
-    } else if (failures > 1) {
-      console.log(chalk.red(failures, 'Failing Tests'));
-    } else if (failures === 0) {
-      console.log(chalk.green('All Tests Passed!'));
-    }
     process.exit(failures);
   });
 });
