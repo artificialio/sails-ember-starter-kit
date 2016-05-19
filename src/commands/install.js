@@ -44,7 +44,7 @@ module.exports = async function install(addonNames, options, leek) {
         force  : options.force || false,
         docker : options.docker || false,
         skipNpm: options.skipNpm || false
-        }, leek);
+      }, leek);
 
       console.log(`${addonName} generator succesfully set up.`);
     }

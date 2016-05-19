@@ -1,4 +1,4 @@
-/*eslint no-process-exit:0*/
+/* eslint no-process-exit:0*/
 'use strict';
 
 var glob  = require('glob');
@@ -7,7 +7,7 @@ var chalk = require('chalk');
 
 require('babel-register');
 
-require("babel-polyfill");
+require('babel-polyfill');
 
 var mocha = new Mocha({
   // For some reason, tests take a long time on Windows (or at least AppVeyor)
