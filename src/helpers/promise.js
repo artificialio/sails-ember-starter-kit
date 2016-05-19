@@ -1,4 +1,5 @@
 /* eslint no-proto:0 */
+/* eslint no-use-before-define:0 */
 'use strict';
 
 var RSVP    = require('rsvp');
