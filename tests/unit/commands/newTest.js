@@ -1,4 +1,4 @@
-/*eslint-env node, mocha, es6 */
+/* eslint-env node, mocha, es6 */
 'use strict';
 
 var { expect } = require('chai');

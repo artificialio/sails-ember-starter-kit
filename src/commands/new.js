@@ -68,7 +68,7 @@ function prepareDockerTemplate(name, option, user) {
     case 'redis':
       port = 6379;
       db = 'redis';
-    break;
+      break;
   }
 
   return prepareTemplate(name, {
@@ -258,7 +258,7 @@ module.exports = async function newProject(name, options, leek) {
       fs.mkdirSync(name);
       // change directory into projectRoot
       process.chdir(name);
-    } catch(err) {
+    } catch (err) {
       if (err.code === 'EEXIST') {
         err.message = 'Creating a new folder failed. Check if the folder \'' + name + '\' already exists.';
         throw err;
@@ -297,7 +297,7 @@ module.exports = async function newProject(name, options, leek) {
   fs.writeFileSync(path.join('.sane-cli'), JSON.stringify(cliConfig, null, 2));
   try {
     fs.mkdirSync(serverName);
-  } catch(err) {
+  } catch (err) {
     if (err.code === 'EEXIST') {
       err.message = `Creating a new folder failed. Check if the folder '${name}' already exists.`;
       throw err;

@@ -1,4 +1,4 @@
-/*eslint-env node, mocha, es6 */
+/* eslint-env node, mocha, es6 */
 'use strict';
 
 var fs               = require('fs-extra');
@@ -35,8 +35,8 @@ describe('Acceptance: sane new', function () {
     'pluralize', 'sails-disk'];
 
     assertFile('server/package.json', {
-        contains: sailsPackages
-      });
+      contains: sailsPackages
+    });
   });
 
   it(`sane new facebook -d postgres, where facebook does not yet exist, works and adds settings to ${dockerCompose}.yml`, async function () {
