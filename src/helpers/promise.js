@@ -1,9 +1,12 @@
 /* eslint no-proto:0 */
-/* eslint no-use-before-define:0 */
 'use strict';
 
 var RSVP    = require('rsvp');
 var Promise = RSVP.Promise;
+
+function PromiseExt(resolver, label) {
+  this._superConstructor(resolver, label);
+};
 
 module.exports = PromiseExt;
 
@@ -29,10 +32,6 @@ module.exports.filter = function () {
 module.exports.map = function () {
   return this.resolve(RSVP.map.apply(null, arguments));
 };
-
-function PromiseExt(resolver, label) {
-  this._superConstructor(resolver, label);
-}
 
 PromiseExt.prototype = Object.create(Promise.prototype);
 PromiseExt.prototype.constructor = PromiseExt;
